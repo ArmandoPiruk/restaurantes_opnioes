@@ -1,4 +1,4 @@
-class Qualificacao < ActiveRecord::Base
+﻿class Qualificacao < ActiveRecord::Base
 	validates_presense_of :nota, :message => " - deve ser preenchido"
 	validates_presense_of :valor_gasto, :message => " - deve ser preenchido"
 	
