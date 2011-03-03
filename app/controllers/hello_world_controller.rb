@@ -3,6 +3,6 @@ class HelloWorldController < ApplicationController
     hello
   end
   def hello
-    render :text => "Testando RubyOnRaisl, GitHub e Heroku..."
+    render :text => "<h1>Testando RubyOnRaisl, GitHub e Heroku...</h1>"
   end
 end
