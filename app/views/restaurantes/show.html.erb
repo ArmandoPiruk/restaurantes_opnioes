@@ -1,0 +1,16 @@
+﻿<%= render :partial => "titulo" %>
+<h2>Listagem de Restaurantes</h2>
+<p>
+  <b>Nome: </b>
+  <%= @restaurante.nome %>
+</p>
+<p>
+  <b>Endere&ccedil;o: </b>
+  <%= @restaurante.endereco %>
+</p>
+<p>
+  <b>Especialidade: </b>
+  <%= @restaurante.especialidade %>
+</p>
+<%= link_to 'Editar', {:action => 'edit', :id => @restaurante } %>
+<%= link_to 'Voltar', {:action => 'index'} %>

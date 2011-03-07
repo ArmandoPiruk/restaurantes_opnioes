@@ -1,0 +1,21 @@
+﻿<%= render :partial => "titulo" %>
+<h2>Listagem de Restaurantes</h2>
+<table>
+  <tr>
+    <th>Nome</th>
+	<th>Endereco</th>
+	<th>Especialidade</th>
+  </tr>
+  <% for restaurante in @restaurantes %>
+	<tr>
+	  <td><%=h restaurante.nome %></td>
+	  <td><%=h restaurante.endereco %></td>
+	  <td><%=h restaurante.especialidade %></td>
+	  <td><%= link_to 'show', {:action => 'show', :id => restaurante } %></td>
+	  <td><%= link_to 'edit', {:action => 'edit', :id => restaurante } %></td>
+	  <td><%= link_to 'destroy', {:action => 'destroy', :id => restaurante } %></td>
+	</tr>
+  <% end %>	  
+</table>
+<br />
+<%= link_to 'Cadastrar Novo Restaurante', {:action => 'new'} %>
