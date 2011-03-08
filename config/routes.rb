@@ -1,4 +1,6 @@
 RestaurantesOpnioes::Application.routes.draw do |map|
+  resources :clientes
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -56,5 +58,8 @@ RestaurantesOpnioes::Application.routes.draw do |map|
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
   match ':controller(/:action(/:id(.:format)))'
-  map.root :controller => "restaurantes"
+  map.root :controller => "rack"
+  
+  #testando rack's
+  match 'rack', :to => proc{|env| [200,{"Content-Type" => "text/html"},["App rack numa rota Rails<br />#match 'rack', :to => proc{|env| [200,{'Content-Type' => 'text/html'},['App rack numa rota Rails']]}"]]}
 end
