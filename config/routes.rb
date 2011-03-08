@@ -57,9 +57,14 @@ RestaurantesOpnioes::Application.routes.draw do |map|
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
-  match ':controller(/:action(/:id(.:format)))'
-  map.root :controller => "rack"
+  
+  ##match ':controller(/:action(/:id(.:format)))'
+  ##map.root :controller => "restaurante"
   
   #testando rack's
   match 'rack', :to => proc{|env| [200,{"Content-Type" => "text/html"},["App rack numa rota Rails<br />#match 'rack', :to => proc{|env| [200,{'Content-Type' => 'text/html'},['App rack numa rota Rails']]}"]]}
+  
+  get "restaurantes/index"
+  map.resources :restaurantes
+  map.connect ':controller/:action/:id'
 end
