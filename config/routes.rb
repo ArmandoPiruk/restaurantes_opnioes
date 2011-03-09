@@ -1,4 +1,6 @@
 RestaurantesOpnioes::Application.routes.draw do |map|
+  resources :qualificacoes
+
   get "teste/index"
 
   resources :clientes
